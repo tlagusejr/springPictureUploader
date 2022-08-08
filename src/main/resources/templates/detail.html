@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+<h2>
+<span th:text="${picture.fileName}"></span>
+</h2>
+</div>
+<div>
+<img th:src="@{img/thumbnail/} + ${picture.fileName}" />
+    <span>상태:</span>
+    <span th:text="${picture.state}"></span>
+</div>
+<div>-1은 아직 classify를 하지않은것입니다.</div>
+<form action="/transfer" method="get">
+    <button>classify</button>
+</form >
+<form th:action="@{'/delete/'+${picture.id}}" method="post">
+    <input type="hidden" name="_method" value="delete" />
+    <button class="link-delete-article" type="submit">삭제</button>
+</form>
+
+</body>
+</html>

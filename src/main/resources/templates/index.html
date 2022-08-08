@@ -1,0 +1,27 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+</head>
+<body>
+<a href="/">
+    홈으로
+</a>
+<a href="uploadpage">
+    업로드
+</a>
+
+<div>
+    <table>
+        <tbody>
+        <tr th:each="picture : ${pictures}">
+            <td><a th:text="${picture.fileName}" th:href="@{/detail?id=} +${picture.id}"></a></td>
+            <td><img th:src="@{img/thumbnail/} + ${picture.fileName}" /></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>
