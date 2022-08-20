@@ -23,6 +23,8 @@ public class Picture {
     @Column
     private String fileName;
     @Column
+    private String serverSaveFileName;
+    @Column
     private String state;
 
     private LocalDateTime createDate;
